@@ -1,0 +1,54 @@
+.display-main {
+  font-family: sans-serif;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+}
+.meme-section {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  cursor: pointer;
+}
+.meme-section:hover > .svg-div {
+  display: flex;
+  z-index: 1;
+}
+.meme-section:hover > .meme-info {
+  background-color: black;
+  opacity: 1;
+  color: white;
+  opacity: 0.6;
+}
+.meme-info {
+  display: flex;
+  flex-direction: column;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.meme-info img {
+  max-width: 250px;
+  height: 250px;
+}
+.svg-div {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+#svg {
+  width: 55px;
+  height: 55px;
+  color: black;
+}
