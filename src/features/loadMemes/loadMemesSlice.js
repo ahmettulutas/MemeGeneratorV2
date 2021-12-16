@@ -33,6 +33,6 @@ export const allMemesSlice = createSlice({
 });
 
 export default allMemesSlice.reducer;
-export const selectAllMemes = (state) => state.allMemesSlice.allMemes;
+export const selectAllMemes = (state) => state.allMemesSlice.allMemes.data.memes;
 export const selectIsLoading = (state) => state.allMemesSlice.isLoading;
 export const selectFulfilled = (state) => state.allMemesSlice.fulfilled;

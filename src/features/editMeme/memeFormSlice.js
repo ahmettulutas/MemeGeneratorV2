@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { selectAllMemes, selectFulfilled } from "../loadMemes/loadMemesSlice";
 
-//const postMemeRequest = createAsyncThunk("");
+const postMemeRequest = createAsyncThunk("filteredMemeSlice", async () => {
+  
+});
 
 /*const filteredMeme = (state) => {
   const allMemes = selectAllMemes(state);

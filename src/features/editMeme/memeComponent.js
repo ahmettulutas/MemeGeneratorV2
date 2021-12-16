@@ -1,35 +1,38 @@
 import { useParams } from "react-router-dom";
 import Meme from "../../components/meme";
+import MemeForm from "../../components/memeForm.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAllMemes, selectFulfilled } from "../loadMemes/loadMemesSlice";
-import {} from "./memeFormSlice";
+
 import { useEffect, useState, usestate } from "react";
-const MemeForm = () => {
+const MemeComponent = () => {
   const [meme, setMeme] = useState(null);
   const allMemes = useSelector(selectAllMemes);
   const dispatch = useDispatch();
   const fulfilled = useSelector(selectFulfilled);
   const { id } = useParams();
 
-  useEffect(() => {
-    if (allMemes.data) {
-      setMeme(allMemes.data.memes.filter((item) => item.id === id));
+  useEffect(() => { 
+    if (allMemes) {
+      setMeme(allMemes.filter((item) => item.id === id));
     }
-  }, [dispatch, meme]);
+    console.log(allMemes)
+  }, [dispatch, allMemes,id]);
   console.log(meme);
   console.log(id);
   return (
     <main>
       {meme && (
         <div>
-          <img src={meme[0].url}></img>
+          <img alt={meme[0].name} src={meme[0].url}></img>
           <h1>{meme[0].id}</h1>
+          <MemeForm textAmount={meme[0].box_count}/>
         </div>
       )}
     </main>
   );
 };
-export default MemeForm;
+export default MemeComponent;
 /*      {fulfilled && (
         <div>
           <figure src={meme.data.memes[id].url}></figure>

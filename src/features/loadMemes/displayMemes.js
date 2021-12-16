@@ -17,7 +17,7 @@ const DisplayMemes = () => {
 
   useEffect(() => {
     dispatch(loadAllMemes());
-    console.log(allMemes);
+    console.log(allMemes.memes);
   }, [dispatch]);
 
   if (loading) {
@@ -25,7 +25,7 @@ const DisplayMemes = () => {
   }
   return (
     <div className="display-main">
-      {fulfilled && allMemes.data.memes.map(createMemeComponent)}
+      {fulfilled && allMemes.map(createMemeComponent)}
     </div>
   );
 };
