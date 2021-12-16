@@ -11,6 +11,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   cursor: pointer;
+  text-decoration: none;
 }
 .meme-section:hover > .svg-div {
   display: flex;

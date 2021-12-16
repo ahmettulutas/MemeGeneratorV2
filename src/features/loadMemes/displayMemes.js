@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import Meme from "../../components/meme";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -7,7 +7,7 @@ import {
   loadAllMemes,
   selectIsLoading
 } from "./loadMemesSlice";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DisplayMemes = () => {
   const dispatch = useDispatch();
@@ -30,14 +30,14 @@ const DisplayMemes = () => {
   );
 };
 export default DisplayMemes;
-const createMemeComponent = (item) => (
-  <Link to={`/memes/${item.id}`}>
+const createMemeComponent = (meme) => (
+  <Link to={`/memes/${meme.id}`}>
     <Meme
-      key={item.id}
-      id={item.id}
-      name={item.name}
-      alt={item.name}
-      img={item.url}
+      key={meme.id}
+      id={meme.id}
+      name={meme.name}
+      alt={meme.name}
+      url={meme.url}
     />
   </Link>
 );

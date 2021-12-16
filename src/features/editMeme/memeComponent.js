@@ -4,29 +4,29 @@ import MemeForm from "../../components/memeForm.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAllMemes, selectFulfilled } from "../loadMemes/loadMemesSlice";
 
-import { useEffect, useState, usestate } from "react";
+import { useEffect, useState, useRef } from "react";
 const MemeComponent = () => {
-  const [meme, setMeme] = useState(null);
+  const [memes, setMemes] = useState(null);
   const allMemes = useSelector(selectAllMemes);
   const dispatch = useDispatch();
   const fulfilled = useSelector(selectFulfilled);
   const { id } = useParams();
-
+  const image = useRef()
   useEffect(() => { 
     if (allMemes) {
-      setMeme(allMemes.filter((item) => item.id === id));
+      setMemes(allMemes.find(item => item.id === id));
     }
     console.log(allMemes)
   }, [dispatch, allMemes,id]);
-  console.log(meme);
-  console.log(id);
+  console.log(memes);
+  console.log(image.style)
   return (
     <main>
-      {meme && (
-        <div>
-          <img alt={meme[0].name} src={meme[0].url}></img>
-          <h1>{meme[0].id}</h1>
-          <MemeForm textAmount={meme[0].box_count}/>
+      {memes && (
+        <div style={{paddingTop:"35px"}}>
+          <img ref={image} style={{width:"300px", height:"auto"}}alt={memes.name} src={memes.url}></img>
+          <h1>{memes.id}</h1>
+          <MemeForm id={id} textAmount={memes.box_count}/>
         </div>
       )}
     </main>
