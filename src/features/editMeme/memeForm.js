@@ -5,7 +5,7 @@ import { selectAllMemes, selectFulfilled } from "../loadMemes/loadMemesSlice";
 import {} from "./memeFormSlice";
 import { useEffect, useState, usestate } from "react";
 const MemeForm = () => {
-  const [meme, setMeme] = useState(window.localStorage.getItem("meme") ? JSON.parse(window.localStorage.getItem("meme")) : null);
+  const [meme, setMeme] = useState(null);
   const allMemes = useSelector(selectAllMemes);
   const dispatch = useDispatch();
   const fulfilled = useSelector(selectFulfilled);
@@ -14,7 +14,6 @@ const MemeForm = () => {
   useEffect(() => {
     if (allMemes.data) {
       setMeme(allMemes.data.memes.filter((item) => item.id === id));
-      window.localStorage.setItem("meme", JSON.stringify(meme))
     }
   }, [dispatch, meme]);
   console.log(meme);
@@ -39,3 +38,6 @@ export default MemeForm;
       )}
 
 */
+
+/*window.localStorage.getItem("meme") ? JSON.parse(window.localStorage.getItem("meme")) : null
+      window.localStorage.setItem("meme", JSON.stringify(meme))*/
