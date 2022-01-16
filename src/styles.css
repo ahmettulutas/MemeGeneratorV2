@@ -113,7 +113,11 @@
   flex-direction: column;
 }
 
-
+.fetched-meme {
+  max-height:300px;
+  padding:1rem;
+  border: 1px solid blue;
+}
 
 
 .footer-main {
