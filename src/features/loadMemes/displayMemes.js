@@ -23,7 +23,7 @@ const DisplayMemes = () => {
     if (loading) {
       return <h1>Loading...</h1>;
     }
-    if(allMemes) {
+    if(fulfilled) {
       return (
           <main className="display-main">
             {allMemes.map(createMemeComponent)}
