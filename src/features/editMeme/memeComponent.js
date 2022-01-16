@@ -7,14 +7,12 @@ import { useEffect, useState } from "react";
 const MemeComponent = () => {
   const [selectedMeme, setSelectedMeme] = useState(null);
   const allMemes = useSelector(selectAllMemes);
-  const dispatch = useDispatch();
-  //const fulfilled = useSelector(selectFulfilled);
   const { id } = useParams();
   useEffect(() => { 
     if (allMemes) { //checks if allmemes are loaded
       setSelectedMeme(allMemes.find(item => item.id === id));
     }
-  }, [dispatch]);
+  },[allMemes,id]);
   return (
     <main>
       {selectedMeme && (
