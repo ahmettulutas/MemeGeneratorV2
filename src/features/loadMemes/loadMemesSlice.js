@@ -5,11 +5,11 @@ export const loadAllMemes = createAsyncThunk(
   async () => {
     const response = await fetch("https://api.imgflip.com/get_memes");
     const json = await response.json();
-    return json;
+    return json.data;
   }
 );
 
-export const allMemesSlice = createSlice({
+export const loadMemesSlice = createSlice({
   name: "allMemes",
   initialState: {
     isLoading: false,
@@ -32,7 +32,7 @@ export const allMemesSlice = createSlice({
   }
 });
 
-export default allMemesSlice.reducer;
-export const selectAllMemes = (state) => state.allMemesSlice.allMemes.data.memes;
-export const selectIsLoading = (state) => state.allMemesSlice.isLoading;
-export const selectFulfilled = (state) => state.allMemesSlice.fulfilled;
+export default loadMemesSlice.reducer;
+export const selectAllMemes = (state) => state.loadMemesSlice.allMemes.memes;
+export const selectIsLoading = (state) => state.loadMemesSlice.isLoading;
+export const selectFulfilled = (state) => state.loadMemesSlice.fulfilled;

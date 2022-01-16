@@ -9,23 +9,18 @@ const MemeComponent = () => {
   const [memes, setMemes] = useState(null);
   const allMemes = useSelector(selectAllMemes);
   const dispatch = useDispatch();
-  const fulfilled = useSelector(selectFulfilled);
+  //const fulfilled = useSelector(selectFulfilled);
   const { id } = useParams();
-  const image = useRef()
   useEffect(() => { 
     if (allMemes) {
       setMemes(allMemes.find(item => item.id === id));
     }
-    console.log(allMemes)
-  }, [dispatch, allMemes,id]);
-  console.log(memes);
-  console.log(image.style)
+  }, [dispatch]);
   return (
     <main>
       {memes && (
         <div style={{paddingTop:"35px"}}>
-          <img ref={image} style={{width:"300px", height:"auto"}}alt={memes.name} src={memes.url}></img>
-          <h1>{memes.id}</h1>
+          <img style={{width:"300px", height:"auto"}}alt={memes.name} src={memes.url}></img>
           <MemeForm id={id} textAmount={memes.box_count}/>
         </div>
       )}
