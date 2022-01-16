@@ -23,24 +23,24 @@ const MemeForm = ({id,textAmount}) => {
     }
     if(textAmount > 2) {
         return (
-            <form onSubmit={handleSubmit}>
-                <input name="text0" type="text" placeholder="text1" onChange={handleChange}>
+            <form className="form-main" onSubmit={handleSubmit}>
+                <input required name="text0" type="text" placeholder="text1" onChange={handleChange}>
                 </input>
-                <input name="text1" type="text" placeholder="text2" onChange={handleChange}>
+                <input required name="text1" type="text" placeholder="text2" onChange={handleChange}>
                 </input>
-                <input name="text2" type="text" placeholder="text3" onChange={handleChange}>
+                <input required name="text2" type="text" placeholder="text3" onChange={handleChange}>
                 </input>
-                <input name="text3" type="text" placeholder="text4" onChange={handleChange}>
+                <input required name="text3" type="text" placeholder="text4" onChange={handleChange}>
                 </input>
                 <button type="submit">MakeMeme</button>
             </form>
         )}
     else {
         return (
-            <form onSubmit={handleSubmit}>
-                <input name="text0" type="text" placeholder="text1" onChange={handleChange}>
+            <form className="form-main" onSubmit={handleSubmit}>
+                <input required name="text0" type="text" placeholder="text1" onChange={handleChange}>
                 </input>
-                <input name="text1" type="text" placeholder="text2" onChange={handleChange}>
+                <input required name="text1" type="text" placeholder="text2" onChange={handleChange}>
                 </input>
                 <button type="submit">MakeMeme</button>
             </form>

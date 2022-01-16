@@ -14,9 +14,9 @@ const MemeComponent = () => {
     }
   },[allMemes,id]);
   return (
-    <main>
+    <main className="meme-component-main">
       {selectedMeme && (
-        <div style={{paddingTop:"35px"}}>
+        <div>
           <img style={{width:"300px", height:"auto"}}alt={selectedMeme.name} src={selectedMeme.url}></img>
           <MemeForm id={id} textAmount={selectedMeme.box_count}/>
         </div>

@@ -17,15 +17,14 @@ const DisplayMemes = () => {
 
     useEffect(() => {
       dispatch(loadAllMemes());
-      console.log(fulfilled,loading)
-    },[dispatch]);
+    },[dispatch, fulfilled]);
 
     if (loading) {
       return <h1>Loading...</h1>;
     }
     if(fulfilled) {
       return (
-          <main className="display-main">
+          <main className="all-memes-main-content">
             {allMemes.map(createMemeComponent)}
           </main>
       )}
@@ -34,7 +33,7 @@ const DisplayMemes = () => {
 //asşodjasldasldjaskdjaskldjaskldasjdklsadjaskldjasdkldjakldjakldjaskdlasjdiladjailksdjakildjaislkdjail
 export default DisplayMemes;
 const createMemeComponent = (meme) => (
-  <Link to={`/memes/${meme.id}`}>
+  <Link style={{ textDecoration: 'none' }} to={`/memes/${meme.id}`}>
     <Meme
       key={meme.id}
       id={meme.id}

@@ -2,7 +2,7 @@ import SelectButton from "./selectbutton";
 
 const Meme = ({ id, url, alt, name }) => {
   return (
-    <main className="meme-section">
+    <main className="each-meme">
       <div className="meme-info">
         <p>{name}</p>
         <img key={id} alt={name} src={url}></img>
