@@ -17,7 +17,7 @@ const DisplayMemes = () => {
 
     useEffect(() => {
       dispatch(loadAllMemes());
-
+      console.log(fulfilled,loading)
     },[dispatch]);
 
     if (loading) {
