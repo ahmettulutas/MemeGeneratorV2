@@ -1,2 +1,2 @@
 # MemeGeneratorV2
-The project is not completed yet because I'm still trying to figure out post request using createAsyncThunk. Going to publish it very soon.
+New Version of my MemeGenerator project. Going to work on CSS and it obviously needs some more styling and going to work on 4 box memes.
