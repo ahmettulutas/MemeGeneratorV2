@@ -1,5 +1,5 @@
 import "./styles.css";
-import HomePage from "./components/homepage";
+import Header from "./components/header";
 import MemeComponent from "./features/editMeme/memeComponent";
 import { BrowserRouter as Router, Navigate, Routes, Route, Link } from "react-router-dom";
 import DisplayMemes from "./features/loadMemes/displayMemes";
@@ -9,11 +9,9 @@ export default function App() {
   return (
     <div>
     <Router>
-    <Link to="/memes" >memes</Link>
+      <Header />
       <Routes>
-        
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/memes/" element={<DisplayMemes />}></Route>
+        <Route path="/" element={<DisplayMemes />}></Route>
         <Route path="/memes/:id" element={<MemeComponent />}></Route>
         <Route path="/memes/:id/:fetchedmeme" element={<FetchedMeme />}></Route>
         <Route

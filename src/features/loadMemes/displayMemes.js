@@ -10,24 +10,26 @@ import {
 import { Link } from "react-router-dom";
 
 const DisplayMemes = () => {
-  const dispatch = useDispatch();
-  const allMemes = useSelector(selectAllMemes);
-  const loading = useSelector(selectIsLoading);
-  const fulfilled = useSelector(selectFulfilled);
+    const dispatch = useDispatch();
+    const allMemes = useSelector(selectAllMemes);
+    const loading = useSelector(selectIsLoading);
+    const fulfilled = useSelector(selectFulfilled);
 
-  useEffect(() => {
-    dispatch(loadAllMemes());
+    useEffect(() => {
+      dispatch(loadAllMemes());
 
-  },[dispatch]);
+    },[dispatch]);
 
-  if (loading) {
-    return <>Loading... </>;
-  }
-  return (
-    <div className="display-main">
-      {fulfilled && allMemes.map(createMemeComponent)}
-    </div>
-  );
+    if (loading) {
+      return <h1>Loading...</h1>;
+    }
+    if(allMemes) {
+      return (
+          <main className="display-main">
+            {allMemes.map(createMemeComponent)}
+          </main>
+      )}
+
 };
 export default DisplayMemes;
 const createMemeComponent = (meme) => (
