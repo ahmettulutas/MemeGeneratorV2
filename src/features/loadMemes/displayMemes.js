@@ -16,9 +16,8 @@ const DisplayMemes = () => {
     const fulfilled = useSelector(selectFulfilled);
 
     useEffect(() => {
-      dispatch(loadAllMemes());
-      console.log("kajsdsas")
-    },[]);
+        dispatch(loadAllMemes());
+    },[dispatch, fulfilled]);
 
     if (loading) {
       return <h1>Loading...</h1>;
