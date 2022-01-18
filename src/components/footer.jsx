@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className='footer-main'>
-            this is footer and will include my personal infos
+            <a target="_blank" href="https://github.com/ahmettulutas"> check my github</a>
         </footer>
     );
 }

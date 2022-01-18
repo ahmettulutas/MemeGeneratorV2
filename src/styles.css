@@ -8,19 +8,21 @@
   display:grid;
   grid-template-rows:auto 1fr auto;
   box-sizing:border-box;
-  min-height: 100vh;
+  height:100vh;
 }
 .routes-section {
   display: flex;
   justify-content: center;
+  padding:1rem;
 }
 .header-main {
   background-color: lightblue;
   position: sticky;
   width:100vw;
   display:flex;
-  justify-content: space-between;
-  padding:2rem 2rem;
+  justify-content: space-around;
+  padding:1rem 1rem;
+
 }
 .link {
   
@@ -39,7 +41,7 @@
   display: grid;
   grid-template-columns:repeat(auto-fill, 140px);
   flex-wrap:wrap;
-  max-height:550px;
+  max-height:800px;
   overflow: scroll;
   max-width:90%;
   margin:2rem;
@@ -107,7 +109,7 @@
   color: black;
 }
 
-
+/* form starts here */
 
 .meme-component-main {
   border:2px solid red;
@@ -115,6 +117,7 @@
 }
 .meme-component-main img {
   max-height:300px;
+  width:100%;
 }
 
 
@@ -123,15 +126,39 @@
   display:flex;
   flex-direction: column;
 }
-
-.fetched-meme {
-  max-height:300px;
-  padding:1rem;
-  border: 1px solid blue;
+.form-main textarea {
+  resize:none;
+  padding:0.5rem;
+  margin:0.5rem;
+}
+.form-main button {
+  padding:0.5rem;
 }
 
+/* form ends here */
+
+.fetchedmeme-main {
+  max-width:300px;
+  padding:1rem;
+  border: 1px solid blue;
+  height:auto;
+}
+.fetchedmeme-main img {
+  max-width:100%;
+}
+/* footer starts here */
 
 .footer-main {
-  padding:2rem 2rem;
+  padding:1rem 1rem;
   background-color:lightblue;
+
+}
+.footer-main a {
+  color:black;
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer-main a:hover {
+  color:orange;
+  transition: 0.5s ease-out;
 }

@@ -12,7 +12,7 @@ const MemeForm = ({id,textAmount}) => {
 
     const handleChange= (e) => {
         const {name, value} = e.target
-        setQueryParams(prev => ({...prev, [name]:value}))
+        setQueryParams(prev => ({...prev, [name]:value.toUpperCase()}))
         
     }
     const handleSubmit = async (e) => {
@@ -23,10 +23,10 @@ const MemeForm = ({id,textAmount}) => {
     }
     return (
             <form className="form-main" onSubmit={handleSubmit}>
-                <input required name="text0" type="text" placeholder="text1" onChange={handleChange}>
-                </input>
-                <input required name="text1" type="text" placeholder="text2" onChange={handleChange}>
-                </input>
+                <textarea required name="text0" type="text" placeholder="type something..." onChange={handleChange}>
+                </textarea>
+                <textarea required name="text1" type="text" placeholder="type something..." onChange={handleChange}>
+                </textarea>
                 <button type="submit">MakeMeme</button>
             </form>
         )}

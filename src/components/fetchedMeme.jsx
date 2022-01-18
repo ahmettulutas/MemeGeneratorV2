@@ -6,7 +6,7 @@ const FetchedMeme = () => {
         const newMeme = useSelector(memeSelector) 
         if(newMeme.success) {
             return (
-                <main>
+                <main className="fetchedmeme-main">
                     <img alt="fetchedmeme" src={newMeme.data.url}></img>
                 </main>
             )
