@@ -17,8 +17,8 @@ const DisplayMemes = () => {
 
     useEffect(() => {
       dispatch(loadAllMemes());
-      console.log(allMemes)
-    },[dispatch, fulfilled]);
+      console.log("kajsdsas")
+    },[]);
 
     if (loading) {
       return <h1>Loading...</h1>;
