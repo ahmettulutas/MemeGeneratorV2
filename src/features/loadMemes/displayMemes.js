@@ -17,6 +17,7 @@ const DisplayMemes = () => {
 
     useEffect(() => {
       dispatch(loadAllMemes());
+      console.log(allMemes)
     },[dispatch, fulfilled]);
 
     if (loading) {
@@ -25,12 +26,14 @@ const DisplayMemes = () => {
     if(fulfilled) {
       return (
           <main className="all-memes-main-content">
-            {allMemes.map(createMemeComponent)}
+            {/*filters memes with 4 boxes */}
+             {allMemes.filter(item => item.box_count <4).map(createMemeComponent)} 
+            
           </main>
       )}
 
 };
-//asşodjasldasldjaskdjaskldjaskldasjdklsadjaskldjasdkldjakldjakldjaskdlasjdiladjailksdjakildjaislkdjail
+
 export default DisplayMemes;
 const createMemeComponent = (meme) => (
   <Link style={{ textDecoration: 'none' }} to={`/memes/${meme.id}`}>

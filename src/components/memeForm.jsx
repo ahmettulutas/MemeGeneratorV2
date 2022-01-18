@@ -21,22 +21,7 @@ const MemeForm = ({id,textAmount}) => {
         await navigate(`/memes/${id}/${queryParams.template_id +"fetch"}`)
         
     }
-    if(textAmount > 2) {
-        return (
-            <form className="form-main" onSubmit={handleSubmit}>
-                <input required name="text0" type="text" placeholder="text1" onChange={handleChange}>
-                </input>
-                <input required name="text1" type="text" placeholder="text2" onChange={handleChange}>
-                </input>
-                <input required name="text2" type="text" placeholder="text3" onChange={handleChange}>
-                </input>
-                <input required name="text3" type="text" placeholder="text4" onChange={handleChange}>
-                </input>
-                <button type="submit">MakeMeme</button>
-            </form>
-        )}
-    else {
-        return (
+    return (
             <form className="form-main" onSubmit={handleSubmit}>
                 <input required name="text0" type="text" placeholder="text1" onChange={handleChange}>
                 </input>
@@ -45,7 +30,7 @@ const MemeForm = ({id,textAmount}) => {
                 <button type="submit">MakeMeme</button>
             </form>
         )}
-    }
+
 export default MemeForm;
 
 //helper function to query params

@@ -4,7 +4,8 @@ const Header = () => {
     return (
         <header className="header-main">
             <p>Welcome to MemeGeneratorV2</p>
-            <Link to="/">ALL MEMES</Link>
+            <Link className="link" to="/">ALL MEMES</Link>
+            
         </header>
     );
 }
