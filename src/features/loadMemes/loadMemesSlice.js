@@ -22,7 +22,7 @@ export const loadMemesSlice = createSlice({
     hasError: false,
     fulfilled: false,
     pending:false,
-    allMemes: {}
+    allMemes: null
   },
   extraReducers: {
     [loadAllMemes.pending]: (state, action) => {

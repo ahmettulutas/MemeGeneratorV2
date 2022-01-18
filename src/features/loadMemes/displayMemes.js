@@ -16,8 +16,10 @@ const DisplayMemes = () => {
     const fulfilled = useSelector(selectFulfilled);
 
     useEffect(() => {
-      dispatch(loadAllMemes());
-      console.log(allMemes)
+      if(!allMemes) {
+        dispatch(loadAllMemes());
+      }
+
     },[dispatch, fulfilled]);
 
     if (loading) {
