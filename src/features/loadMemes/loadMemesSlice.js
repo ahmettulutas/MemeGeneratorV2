@@ -23,7 +23,7 @@ export const loadMemesSlice = createSlice({
     hasError: false,
     fulfilled: false,
     pending:false,
-    allMemes: null
+    allMemes: {}
   },
   extraReducers: {
     [loadAllMemes.pending]: (state, action) => {
@@ -41,7 +41,7 @@ export const loadMemesSlice = createSlice({
 });
 export default loadMemesSlice.reducer;
 
-//selectors
+// selectors
 export const selectAllMemes = (state) => state.loadMemesSlice.allMemes.memes;
 export const selectIsLoading = (state) => state.loadMemesSlice.isLoading;
 export const selectFulfilled = (state) => state.loadMemesSlice.fulfilled;

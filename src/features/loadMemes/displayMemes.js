@@ -17,17 +17,16 @@ const DisplayMemes = () => {
 
     useEffect(() => {
         dispatch(loadAllMemes());    
-    },[dispatch, fulfilled]);
+        localStorage.setItem("allMemes", )
+    },[dispatch]);
 
     if (loading) {
       return <h1>Loading...</h1>;
     }
-    if(fulfilled) {
+    if(fulfilled && allMemes) {
       return (
-          <main className="all-memes-main-content">
-            {/*filters memes with 4 boxes */}
-             {allMemes.filter(item => item.box_count <4).map(createMemeComponent)} 
-            
+          <main style={{color:"white"}}className="all-memes-main-content">
+             {allMemes.filter(item => item.box_count <4).map(createMemeComponent)}
           </main>
       )}
 
