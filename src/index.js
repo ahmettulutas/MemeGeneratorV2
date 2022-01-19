@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import store from "./store";
 import {persistor} from "./store";
 import App from "./App";
-
+import { PersistGate } from 'redux-persist/integration/react'
 const rootElement = document.getElementById("root");
 /*
 ReactDOM.render(
