@@ -17,7 +17,6 @@ const DisplayMemes = () => {
 
     useEffect(() => {
         dispatch(loadAllMemes());    
-        localStorage.setItem("allMemes", )
     },[dispatch]);
 
     if (loading) {
