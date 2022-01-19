@@ -11,14 +11,14 @@ import { Link } from "react-router-dom";
 
 const DisplayMemes = () => {
     const dispatch = useDispatch();
-    const allMemes = window.localStorage.getItem("allMemes") ? JSON.parse(window.localStorage.getItem("allMemes")) : useSelector(selectAllMemes);
+    const allMemes = useSelector(selectAllMemes);
     const loading = useSelector(selectIsLoading);
     const fulfilled = useSelector(selectFulfilled);
 
     useEffect(() => {
       
         dispatch(loadAllMemes());
-        window.localStorage.setItem("allMemes", JSON.stringify(allMemes))
+
         
     },[dispatch, fulfilled]);
 
