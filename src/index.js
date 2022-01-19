@@ -11,11 +11,9 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <StrictMode>
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-                <App></App>
-      </PersistGate>
-    </Provider>
+      <Provider store={store}>
+          <App></App>
+      </Provider>
   </StrictMode>,
   rootElement
 )
