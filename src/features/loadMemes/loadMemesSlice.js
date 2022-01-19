@@ -5,6 +5,7 @@ export const loadAllMemes = createAsyncThunk(
   "allMemes/loadAllMemes",
   async () => {
     try {
+      console.log("alkshdasdha")
       const response = await fetch("https://api.imgflip.com/get_memes");
       const json = await response.json();
       return json.data;
