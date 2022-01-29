@@ -24,6 +24,10 @@
   padding:1rem 1rem;
 
 }
+.header-main p {
+  color:orange; 
+  font-weight: bold;
+}
 .link {
   
   color:black;
@@ -32,7 +36,7 @@
 }
 .link:hover {
   color:orange;
-  transition: 0.5s ease-out;
+  transition: 0.1s ease-in;
 }
 .all-memes-main-content {
   background-color: black;
@@ -112,15 +116,14 @@
 /* form starts here */
 
 .meme-component-main {
-  border:2px solid red;
+  border-radius:10px;
+  border:2px solid orange;
   padding:1rem;
 }
 .meme-component-main img {
   max-height:300px;
   width:100%;
 }
-
-
 
 .form-main {
   display:flex;
@@ -129,10 +132,24 @@
 .form-main textarea {
   resize:none;
   padding:0.5rem;
-  margin:0.5rem;
+  margin:0.2rem;
+  border:1px solid orange;
+}
+.form-main textarea:focus {
+  border:2px solid green;
+  
 }
 .form-main button {
   padding:0.5rem;
+  margin:0.2rem;
+  cursor:pointer;
+  border:none;
+  font-weight:bold;
+}
+.form-main button:hover,
+.form-main button:focus {
+  color:orange;
+  background-color: lightblue;
 }
 
 /* form ends here */
@@ -140,9 +157,49 @@
 .fetchedmeme-main {
   max-width:300px;
   padding:1rem;
-  border: 1px solid blue;
+  border: 2px solid orange;
+  border-radius:10px;
   height:auto;
+  display:flex;
+  align-items:center;
+  color:orange;
+  justify-content: center;
+  flex-direction:column;
+  position:relative;
 }
+@keyframes textcolor {
+  0% {
+    color:black;
+  }
+  100% {
+    color:orange;
+  }
+}
+
+.fetchedmeme-main p {
+  position:absolute ;
+  width:100%;
+  bottom:12px;
+  background-color: lightblue;
+  padding:5px;
+  text-align:center;
+  animation: textcolor 0.5s linear 0.5s infinite alternate;
+}
+@keyframes textcolor {
+  0% {
+    color:black;
+  }
+  50% {
+    color:red;
+  }
+  75% {
+    color:white;
+  }
+  100% {
+    color:orange;
+  }
+}
+
 .fetchedmeme-main img {
   max-width:100%;
 }
@@ -153,12 +210,17 @@
   background-color:lightblue;
 
 }
+@keyframes flash {
+  from {color:black}
+  to {color:orange}
+}
 .footer-main a {
   color:black;
   font-weight: bold;
   text-decoration: none;
+  animation: flash 0.5s linear 0.5s infinite alternate;
 }
 .footer-main a:hover {
   color:orange;
-  transition: 0.5s ease-out;
+  transition: 0.1s ease-in
 }

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import MemeForm from "../../components/memeForm.jsx";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectAllMemes } from "../loadMemes/loadMemesSlice";
 import { useEffect, useState } from "react";
 
@@ -8,10 +8,11 @@ const MemeComponent = () => {
   const [selectedMeme, setSelectedMeme] = useState(null);
   const allMemes = useSelector(selectAllMemes);
   const { id } = useParams();
-  useEffect(() => { 
-    if (allMemes) { //checks if allmemes are loaded
-      setSelectedMeme(allMemes.find(item => item.id === id));
-    }
+  useEffect(() => {
+    //checks if allmemes are loaded 
+      if (allMemes) {
+        setSelectedMeme(allMemes.find(item => item.id === id));
+      }
   },[allMemes,id]);
   return (
     <main className="meme-component-main">

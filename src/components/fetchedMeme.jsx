@@ -7,7 +7,8 @@ const FetchedMeme = () => {
         if(newMeme.success) {
             return (
                 <main className="fetchedmeme-main">
-                    <img alt="fetchedmeme" src={newMeme.data.url}></img>
+                    <p>Click on the Meme to download it</p>
+                    <a href={newMeme.data.url} download={newMeme.data.url}><img alt="fetchedmeme" src={newMeme.data.url}></img></a>
                 </main>
             )
         }

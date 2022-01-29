@@ -22,7 +22,7 @@ const DisplayMemes = () => {
     if (loading) {
       return <h1>Loading...</h1>;
     }
-    if(fulfilled && allMemes) {
+    if (fulfilled && allMemes) {
       return (
           <main style={{color:"white"}}className="all-memes-main-content">
              {allMemes.filter(item => item.box_count <4).map(createMemeComponent)}
