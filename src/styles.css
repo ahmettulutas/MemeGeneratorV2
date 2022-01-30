@@ -15,6 +15,7 @@
   justify-content: center;
   padding:1rem;
 }
+/* header starts here */
 .header-main {
   background-color: lightblue;
   position: sticky;
@@ -22,14 +23,12 @@
   display:flex;
   justify-content: space-around;
   padding:1rem 1rem;
-
 }
 .header-main p {
   color:orange; 
   font-weight: bold;
 }
 .link {
-  
   color:black;
   font-weight: bold;
   text-decoration: none;
@@ -38,6 +37,7 @@
   color:orange;
   transition: 0.1s ease-in;
 }
+/* header finishes here */
 .all-memes-main-content {
   background-color: black;
   font-family: sans-serif;
@@ -166,14 +166,6 @@
   justify-content: center;
   flex-direction:column;
   position:relative;
-}
-@keyframes textcolor {
-  0% {
-    color:black;
-  }
-  100% {
-    color:orange;
-  }
 }
 
 .fetchedmeme-main p {

@@ -29,6 +29,7 @@ const filteredMemeSlice = createSlice({
     [postMemeRequest.fulfilled]:(state,action) => {
       state.fetchedmeme = action.payload;
       state.isFulfilled = true;
+      state.isLoading = false;
     },
     [postMemeRequest.rejected]:(state,action) => {
       state.isFailed = true;
@@ -38,4 +39,7 @@ const filteredMemeSlice = createSlice({
 
 });
 export default filteredMemeSlice.reducer;
-export const memeSelector = state => state.filteredMemeSlice.fetchedmeme;
+// selectors
+export const selectMeme = state => state.filteredMemeSlice.fetchedmeme;
+export const selectIsLoading = state => state.filteredMemeSlice.isLoading;
+

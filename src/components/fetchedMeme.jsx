@@ -1,9 +1,10 @@
-import { memeSelector } from "../features/editMeme/memeFormSlice";
+import { selectMeme, selectIsLoading } from "../features/editMeme/memeFormSlice";
 import { useSelector } from "react-redux";
 import React from 'react';
 
 const FetchedMeme = () => {
-        const newMeme = useSelector(memeSelector) 
+        const newMeme = useSelector(selectMeme);
+        const loading = useSelector(selectIsLoading)
         if(newMeme.success) {
             return (
                 <main className="fetchedmeme-main">
@@ -12,6 +13,10 @@ const FetchedMeme = () => {
                 </main>
             )
         }
+        if (loading) {
+            return <h1>Loading...</h1>
+
+        }
         else {
             return (
                 <main>
@@ -19,6 +24,7 @@ const FetchedMeme = () => {
                 </main>
                 
                 )}
+        
 }
 
 export default FetchedMeme;
