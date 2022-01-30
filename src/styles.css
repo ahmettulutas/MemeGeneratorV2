@@ -25,6 +25,7 @@
 .header-main {
   background-color: lightblue;
   position: sticky;
+  z-index:100;
   width:100vw;
   display:flex;
   justify-content: space-around;
@@ -207,6 +208,9 @@
 .footer-main {
   padding:1rem 1rem;
   background-color:lightblue;
+  display: flex;
+  justify-content: space-between;
+  padding:1rem;
 }
 @keyframes flash {
   from {color:black}
