@@ -35,7 +35,7 @@
 }
 .link:hover {
   color:orange;
-  transition: 0.1s ease-in;
+  transition: 0.1s ease-out;
 }
 /* header finishes here */
 .all-memes-main-content {
@@ -51,7 +51,7 @@
   padding:1rem 1rem;
   grid-gap:0.6rem;
   grid-auto-rows: 1fr;
-  color:"white";
+  color:white;
 }
 .each-meme {
   border: 3px solid white;
@@ -153,7 +153,7 @@
 }
 
 /* form ends here */
-
+/* fecthed meme starts here */
 .fetchedmeme-main {
   max-width:300px;
   padding:1rem;
@@ -196,6 +196,7 @@
   max-width:100%;
   padding:0.5rem;
 }
+/* fecthed meme ends here */
 /* footer starts here */
 
 .footer-main {

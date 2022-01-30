@@ -6,37 +6,44 @@ import {
   selectFulfilled,
   selectAllMemes,
   loadAllMemes,
-  selectIsLoading,
-  selectIsFailed
+  selectIsPending,
+  selectRejected
 } from "./loadMemesSlice";
 import { Link } from "react-router-dom";
 
 const DisplayMemes = () => {
     const dispatch = useDispatch();
     const allMemes = useSelector(selectAllMemes);
-    const loading = useSelector(selectIsLoading);
+    const loading = useSelector(selectIsPending);
     const fulfilled = useSelector(selectFulfilled);
-    const failed = useSelector(selectIsFailed)
+    const rejected = useSelector(selectRejected)
     useEffect(() => {
         dispatch(loadAllMemes());    
     },[dispatch]);
 
     if (loading) {
-      return <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"  speed="1"  style={{width: "300px", height: "300px;"}}  loop autoplay></lottie-player>;
-    }
+      return (
+          <main className="all-memes-main-content">
+              <h1>Loading...</h1>
+              <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"  speed="1"  style={{width: "300px", height: "300px;"}}  loop autoplay></lottie-player>;
+          </main>
+      )}
     if (fulfilled && allMemes) {
       return (
           <main className="all-memes-main-content">
              {allMemes.filter(item => item.box_count <4).map(createMemeComponent)}
           </main>
       )}
-    else {
-      return <Failed />
-    }
+    if  (rejected) {
+      return (
+          <main className="all-memes-main-content">
+             <Failed /> 
+          </main>
+      )}
 
 };
-
 export default DisplayMemes;
+
 const createMemeComponent = (meme) => (
   <Link style={{ textDecoration: 'none' }} to={`/memes/${meme.id}`}>
     <Meme

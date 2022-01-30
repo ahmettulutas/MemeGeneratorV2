@@ -19,8 +19,9 @@ export const loadMemesSlice = createSlice({
   name: "allMemes",
   initialState: {
     isLoading: true,
-    isFailed: false,
+    hasError: false,
     fulfilled: false,
+    pending:false,
     allMemes: {}
   },
   extraReducers: {
@@ -33,14 +34,14 @@ export const loadMemesSlice = createSlice({
       state.allMemes = action.payload;
     },
     [loadAllMemes.rejected]: (state, action) => {
-      state.isFailed = true;
+      state.hasError = true;
     }
   }
 });
 export default loadMemesSlice.reducer;
 
 // selectors
-export const selectAllMemes = state => state.loadMemesSlice.allMemes.memes;
-export const selectIsLoading = state => state.loadMemesSlice.isLoading;
-export const selectFulfilled = state => state.loadMemesSlice.fulfilled;
-export const selectIsFailed = state => state.loadMemesSlice.isFailed;
+export const selectAllMemes = (state) => state.loadMemesSlice.allMemes.memes;
+export const selectIsPending = (state) => state.loadMemesSlice.isLoading;
+export const selectFulfilled = (state) => state.loadMemesSlice.fulfilled;
+export const selectRejected = state  => state.loadMemesSlice.hasError;
