@@ -9,16 +9,14 @@ export default function App() {
   return (
     <main className="main-app-layout">
 
-    <Router>
+    <Router className="routes-section">
       <Header />
-      <section className="routes-section">
       <Routes>
         <Route path="/" element={<DisplayMemes />}></Route>
         <Route path="/memes/:id" element={<MemeComponent />}></Route>
         <Route path="/memes/:id/:fetchedmeme" element={<FetchedMeme />}></Route>
         <Route path="*" element={<Navigate to="/" />}></Route>
       </Routes>
-      </section>
       <Footer />
     </Router>
     </main>
