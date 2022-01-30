@@ -1,5 +1,5 @@
 # MemeGeneratorV2
-In this project I have used @reduxjs/toolkit and redux-persist.
+In this project I used @reduxjs/toolkit and redux-persist.
 You can find an example for createAsyncThunk below.
 ```js
 export const loadAllMemes = createAsyncThunk(
@@ -17,4 +17,4 @@ export const loadAllMemes = createAsyncThunk(
 );
 ```
 # Türkçe 
-MemeGenerator projemin Yeni Sürümü. Belli ki biraz daha stylinge ihtiyacı olduğu için CSS üzerinde çalışacağım.
+@reduxjs/toolkit ve redux-persist kütüphanelerini kombine ettiğim bir uygulama. İyi eğlenceler :)
