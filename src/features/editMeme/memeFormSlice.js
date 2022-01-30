@@ -25,7 +25,6 @@ const fetchedMemeSlice = createSlice({
   extraReducers:{
     [postMemeRequest.pending]:(state,action) => {
       state.isLoading = true;
-      setTimeout("",5000)
     },
     [postMemeRequest.fulfilled]:(state,action) => {
       state.fetchedmeme = action.payload;
