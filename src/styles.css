@@ -48,10 +48,10 @@
   max-height:800px;
   overflow: scroll;
   max-width:90%;
-  margin:2rem;
   padding:1rem 1rem;
   grid-gap:0.6rem;
   grid-auto-rows: 1fr;
+  color:"white";
 }
 .each-meme {
   border: 3px solid white;
@@ -194,6 +194,7 @@
 
 .fetchedmeme-main img {
   max-width:100%;
+  padding:0.5rem;
 }
 /* footer starts here */
 

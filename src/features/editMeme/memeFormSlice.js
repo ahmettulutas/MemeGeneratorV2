@@ -39,7 +39,9 @@ const filteredMemeSlice = createSlice({
 
 });
 export default filteredMemeSlice.reducer;
-// selectors
+
+//selectors
 export const selectMeme = state => state.filteredMemeSlice.fetchedmeme;
 export const selectIsLoading = state => state.filteredMemeSlice.isLoading;
+export const selectIsFulfilled = state => state.filteredMemeSlice.isFulfilled;
 

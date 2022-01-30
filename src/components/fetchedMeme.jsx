@@ -1,11 +1,12 @@
-import { selectMeme, selectIsLoading } from "../features/editMeme/memeFormSlice";
+import { selectMeme, selectIsLoading, selectIsFulfilled } from "../features/editMeme/memeFormSlice";
 import { useSelector } from "react-redux";
 import React from 'react';
-
+import Failed from "./failed"
 const FetchedMeme = () => {
         const newMeme = useSelector(selectMeme);
         const loading = useSelector(selectIsLoading)
-        if(newMeme.success) {
+        const fulfilled = useSelector(selectIsFulfilled)
+        if(fulfilled && newMeme) {
             return (
                 <main className="fetchedmeme-main">
                     <p>Click on the Meme to download it</p>
@@ -14,13 +15,18 @@ const FetchedMeme = () => {
             )
         }
         if (loading) {
-            return <h1>Loading...</h1>
-
+            return (
+                <main className="fetchedmeme-main">
+                    <h1>Loading...</h1>
+                    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"  speed="1"  style={{width: "300px", height: "300px;"}}  loop autoplay></lottie-player>;
+                </main>
+            )
         }
         else {
             return (
-                <main>
-                    <h1>Failed to makeMeme</h1>
+                <main className="fetchedmeme-main">
+                    <p>Uppss... Something went wrong...</p>
+                    <Failed />
                 </main>
                 
                 )}
