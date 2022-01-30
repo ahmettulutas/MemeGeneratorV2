@@ -1,4 +1,4 @@
-import SelectButton from "./selectbutton";
+import SelectButton from "./selectbutton.jsx";
 
 const Meme = ({ id, url, alt, name }) => {
   return (

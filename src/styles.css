@@ -9,11 +9,17 @@
   grid-template-rows:auto 1fr auto;
   box-sizing:border-box;
   height:100vh;
+  
+  
 }
 .routes-section {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding:1rem;
+  width:100vw;
+  background-color: rgb(29, 28, 28);
+  
 }
 /* header starts here */
 .header-main {
@@ -39,13 +45,11 @@
 }
 /* header finishes here */
 .all-memes-main-content {
-  background-color: black;
+  background-color: orange;
   font-family: sans-serif;
-  text-align: center;
   display: grid;
-  grid-template-columns:repeat(auto-fill, 140px);
-  flex-wrap:wrap;
-  max-height:800px;
+  grid-template-columns:repeat(auto-fill, 250px);
+  max-height:600px;
   overflow: scroll;
   max-width:90%;
   padding:1rem 1rem;
@@ -60,18 +64,20 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   cursor: pointer;
-  background-color: rgb(48, 45, 45);
-  height:180px;
+  background-color: rgb(122, 118, 118);
+  height:250px;
+  transition: 0.6s ease background-color;
 }
 .each-meme:hover {
-  opacity:0.5;
+  background-color:white;
 }
 .each-meme:hover > .svg-div {
   display: flex;
   z-index: 1;
+  fill:black;
 }
 .each-meme:hover > .meme-info {
-  background-color: black;
+  background-color: white;
   opacity: 1;
   color: white;
   opacity: 0.6;
@@ -91,7 +97,7 @@
 
 .meme-info img {
   max-width: 100%;
-  height: 100px;
+  height:150px;
 }
 .meme-info p {
   color:white;
@@ -119,15 +125,22 @@
   border-radius:10px;
   border:2px solid orange;
   padding:1rem;
+  background-color: lightblue;
 }
-.meme-component-main img {
+.meme-div img{
   max-height:300px;
-  width:100%;
+  max-width:80%;
+  margin:1rem auto;
+  border:2px solid black;
+  display:flex;
+  justify-content: center;
 }
 
 .form-main {
   display:flex;
   flex-direction: column;
+  width:90%;
+  margin:1rem auto;
 }
 .form-main textarea {
   resize:none;
@@ -145,64 +158,55 @@
   cursor:pointer;
   border:none;
   font-weight:bold;
+  background-color: orange;
 }
 .form-main button:hover,
 .form-main button:focus {
-  color:orange;
-  background-color: lightblue;
+  color:lightblue;
+  border-radius: 10px 0px;
+  
 }
 
 /* form ends here */
-/* fecthed meme starts here */
+/* fetched meme starts here */
 .fetchedmeme-main {
-  max-width:300px;
-  padding:1rem;
+  max-width:450px;
   border: 2px solid orange;
   border-radius:10px;
-  height:auto;
   display:flex;
   align-items:center;
   color:orange;
-  justify-content: center;
   flex-direction:column;
-  position:relative;
+  padding:1rem;
+  justify-content: space-between;
+  background-color: lightblue;
 }
 
 .fetchedmeme-main p {
-  position:absolute ;
   width:100%;
   bottom:12px;
   background-color: lightblue;
   padding:5px;
   text-align:center;
   animation: textcolor 0.5s linear 0.5s infinite alternate;
+  border-radius:10px;
 }
 @keyframes textcolor {
-  0% {
-    color:black;
-  }
-  50% {
-    color:red;
-  }
-  75% {
-    color:white;
-  }
-  100% {
-    color:orange;
-  }
+  from{color:black;font-weight: bold;}
+  to {color:orange;font-weight:normal}
 }
 
 .fetchedmeme-main img {
-  max-width:100%;
-  padding:0.5rem;
+  width:100%;
+  padding:1rem;
+  height:380px;
 }
-/* fecthed meme ends here */
+/* fetched meme ends here */
 /* footer starts here */
 
 .footer-main {
   padding:1rem 1rem;
   background-color:lightblue;
-
 }
 @keyframes flash {
   from {color:black}
@@ -217,4 +221,22 @@
 .footer-main a:hover {
   color:orange;
   transition: 0.1s ease-in
+}
+@media (max-width:500px) {
+  .all-memes-main-content {
+    max-width:100%;
+    grid-template-columns:repeat(auto-fill, 100px);
+  }
+  .each-meme {
+    height:100px;
+    font-size:0.2rem;
+    text-align: center;
+  }
+  .meme-info p {
+    font-size:8px;
+  }
+  .meme-info img {
+    
+    height: 50px;
+  }
 }

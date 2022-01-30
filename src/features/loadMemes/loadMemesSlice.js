@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { PURGE } from "redux-persist";
 // async action to fetch all meme templates
 export const loadAllMemes = createAsyncThunk(
   "allMemes/loadAllMemes",
@@ -24,7 +24,7 @@ export const loadMemesSlice = createSlice({
     pending:false,
     allMemes: {}
   },
-  extraReducers: {
+  extraReducers:  {
     [loadAllMemes.pending]: (state, action) => {
       state.pending = true;
     },
@@ -35,7 +35,10 @@ export const loadMemesSlice = createSlice({
     },
     [loadAllMemes.rejected]: (state, action) => {
       state.hasError = true;
-    }
+    },
+    [PURGE]: (state) => {
+      state = {};
+      } 
   }
 });
 export default loadMemesSlice.reducer;

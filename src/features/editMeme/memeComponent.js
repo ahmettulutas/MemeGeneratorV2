@@ -13,12 +13,12 @@ const MemeComponent = () => {
       if (allMemes) {
         setSelectedMeme(allMemes.find(item => item.id === id));
       }
-  },[allMemes,id]);
+  },[id]);
   return (
     <main className="meme-component-main">
       {selectedMeme && (
-        <div>
-          <img style={{width:"300px", height:"auto"}}alt={selectedMeme.name} src={selectedMeme.url}></img>
+        <div className="meme-div">
+          <img alt={selectedMeme.name} src={selectedMeme.url}></img>
           <MemeForm id={id} textAmount={selectedMeme.box_count}/>
         </div>
       )}

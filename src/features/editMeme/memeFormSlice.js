@@ -14,7 +14,7 @@ export const postMemeRequest = createAsyncThunk("formSlice/postForm", async (arg
 
 });
 
-const filteredMemeSlice = createSlice({
+const fetchedMemeSlice = createSlice({
   name: "formSlice",
   initialState: {
     isLoading:false,
@@ -25,6 +25,7 @@ const filteredMemeSlice = createSlice({
   extraReducers:{
     [postMemeRequest.pending]:(state,action) => {
       state.isLoading = true;
+      setTimeout("",5000)
     },
     [postMemeRequest.fulfilled]:(state,action) => {
       state.fetchedmeme = action.payload;
@@ -38,10 +39,10 @@ const filteredMemeSlice = createSlice({
 
 
 });
-export default filteredMemeSlice.reducer;
+export default fetchedMemeSlice.reducer;
 
 //selectors
-export const selectMeme = state => state.filteredMemeSlice.fetchedmeme;
-export const selectIsLoading = state => state.filteredMemeSlice.isLoading;
-export const selectIsFulfilled = state => state.filteredMemeSlice.isFulfilled;
+export const selectMeme = state => state.fetchedMemeSlice.fetchedmeme;
+export const selectIsLoading = state => state.fetchedMemeSlice.isLoading;
+export const selectIsFulfilled = state => state.fetchedMemeSlice.isFulfilled;
 

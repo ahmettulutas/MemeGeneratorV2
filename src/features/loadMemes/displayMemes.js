@@ -17,9 +17,13 @@ const DisplayMemes = () => {
     const loading = useSelector(selectIsPending);
     const fulfilled = useSelector(selectFulfilled);
     const rejected = useSelector(selectRejected)
+
     useEffect(() => {
-        dispatch(loadAllMemes());    
-    },[dispatch]);
+      // checks if all meme cards are persisted in the store. I'm getting good at this shit <3.
+          if(allMemes === {}) {
+              dispatch(loadAllMemes());   
+          }  
+      }, [dispatch]);
 
     if (loading) {
       return (

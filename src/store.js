@@ -1,7 +1,7 @@
 
   import { configureStore } from '@reduxjs/toolkit'
   import loadMemesSlice from "./features/loadMemes/loadMemesSlice";
-  import filteredMemeSlice from "./features/editMeme/memeFormSlice";
+  import fetchedMemeSlice from "./features/editMeme/memeFormSlice";
   import { combineReducers } from '@reduxjs/toolkit';
   import {
     persistStore,
@@ -14,20 +14,14 @@
     REGISTER,
   } from 'redux-persist'
   import storage from 'redux-persist/lib/storage'
-/*
-    const store = configureStore({reducer:{
-      loadMemesSlice: loadMemesSlice,
-      filteredMemeSlice: filteredMemeSlice,
-    }})
-  export default store;
-*/
 const persistConfig = { // configuration object for redux-persist
     key: 'root',
     storage, // define which storage to use
-}  
+    whitelist : ['loadMemesSlice','fetchedMemeSlice'],
+  }  
 const rootReducer = combineReducers({
   loadMemesSlice: loadMemesSlice,
-  filteredMemeSlice: filteredMemeSlice,
+  fetchedMemeSlice: fetchedMemeSlice,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer) 
@@ -37,10 +31,9 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActions: [FLUSH, PAUSE, PURGE, REGISTER, REHYDRATE, PERSIST],
       },
-    }),
+    }), 
 })
   export const  persistor = persistStore(store);
   export default store;
-
