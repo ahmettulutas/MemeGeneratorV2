@@ -1,6 +1,6 @@
 import React from 'react';
 
 const Failed = () => {
-    return <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_itjoc71i.json"   background="transparent"  speed="1"  style={{padding:"1rem", width: "300px", height: "300px"}}  loop autoplay></lottie-player>
+    return <h1>Upps.. Something went wrong...</h1>
 }
 export default Failed;
