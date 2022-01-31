@@ -9,8 +9,6 @@
   grid-template-rows:auto 1fr auto;
   box-sizing:border-box;
   height:100vh;
-  
-  
 }
 .routes-section {
   display: flex;
@@ -18,8 +16,7 @@
   align-items: center;
   padding:1rem;
   width:100vw;
-  background-color: rgb(29, 28, 28);
-  
+  background-color: rgb(29, 28, 28); 
 }
 /* header starts here */
 .header-main {
@@ -50,7 +47,7 @@
   font-family: sans-serif;
   display: grid;
   grid-template-columns:repeat(auto-fill, 250px);
-  max-height:600px;
+  max-height:500px;
   overflow: scroll;
   max-width:90%;
   padding:1rem 1rem;
