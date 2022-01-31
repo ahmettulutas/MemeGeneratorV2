@@ -206,6 +206,8 @@
   display: flex;
   justify-content: space-between;
   padding:1rem;
+  color:orange;
+  font-weight:bold;
 }
 @keyframes flash {
   from {color:black}
@@ -221,7 +223,7 @@
   color:orange;
   transition: 0.1s ease-in
 }
-@media (max-width:500px) {
+@media (max-width:450px) {
   .all-memes-main-content {
     max-width:100%;
     grid-template-columns:repeat(auto-fill, 100px);
