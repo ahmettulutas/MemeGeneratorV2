@@ -7,7 +7,6 @@
 .main-app-layout {
   display:grid;
   grid-template-rows:auto 1fr auto;
-  box-sizing:border-box;
   height:100vh;
 }
 .routes-section {
