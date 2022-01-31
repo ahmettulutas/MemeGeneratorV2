@@ -19,7 +19,7 @@ const DisplayMemes = () => {
     const rejected = useSelector(selectRejected)
 
     useEffect(() => {
-      // checks if all meme cards are persisted in the store. I'm getting good at this shit <3.
+      // I'm getting good at this shit <3.
         dispatch(loadAllMemes())
       }, [dispatch]);
 
