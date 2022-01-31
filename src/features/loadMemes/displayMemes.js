@@ -20,9 +20,7 @@ const DisplayMemes = () => {
 
     useEffect(() => {
       // checks if all meme cards are persisted in the store. I'm getting good at this shit <3.
-          if(allMemes === {}) {
-              dispatch(loadAllMemes());   
-          }  
+        dispatch(loadAllMemes())
       }, [dispatch]);
 
     if (loading) {
