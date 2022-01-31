@@ -47,7 +47,7 @@
   font-family: sans-serif;
   display: grid;
   grid-template-columns:repeat(auto-fill, 250px);
-  max-height:500px;
+  max-height:470px;
   overflow: scroll;
   max-width:90%;
   padding:1rem 1rem;
@@ -148,7 +148,6 @@
 }
 .form-main textarea:focus {
   border:2px solid green;
-  
 }
 .form-main button {
   padding:0.5rem;
@@ -168,7 +167,7 @@
 /* form ends here */
 /* fetched meme starts here */
 .fetchedmeme-main {
-  max-width:450px;
+  max-width:400px;
   border: 2px solid orange;
   border-radius:10px;
   display:flex;
