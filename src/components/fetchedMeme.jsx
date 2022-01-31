@@ -17,7 +17,7 @@ const FetchedMeme = () => {
             return (
                 <main className="fetchedmeme-main">
                     <p>Click on the Meme to download it</p>
-                    <a href={newMeme.data.url} download={newMeme.data.url}><img alt="fetchedmeme" src={newMeme.data.url}></img></a>
+                    <a target="_blank" rel="noreferrer" href={newMeme.data.url} download={newMeme.data.url}><img download={newMeme.data.url} alt="fetchedmeme" src={newMeme.data.url}></img></a>
                 </main>
             )
         }
