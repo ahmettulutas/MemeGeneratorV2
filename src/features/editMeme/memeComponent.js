@@ -13,7 +13,7 @@ const MemeComponent = () => {
       if (allMemes) {
         setSelectedMeme(allMemes.find(item => item.id === id));
       }
-  },[id]);
+  },[id, allMemes]);
   return (
     <main className="meme-component-main">
       {selectedMeme && (
@@ -28,5 +28,3 @@ const MemeComponent = () => {
 export default MemeComponent;
 
 
-/*window.localStorage.getItem("meme") ? JSON.parse(window.localStorage.getItem("meme")) : null
-      window.localStorage.setItem("meme", JSON.stringify(meme))*/

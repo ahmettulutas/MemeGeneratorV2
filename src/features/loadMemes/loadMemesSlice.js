@@ -3,7 +3,7 @@ import { PURGE } from "redux-persist";
 // async action to fetch all meme templates
 export const loadAllMemes = createAsyncThunk(
   "allMemes/loadAllMemes",
-  async () => {
+  async (_, {getState}) => {
     try {
       const response = await fetch("https://api.imgflip.com/get_memes");
       const json = await response.json();
@@ -13,6 +13,15 @@ export const loadAllMemes = createAsyncThunk(
       console.log(error)
     }
   },
+  {condition: (userId, { getState, extra }) => {
+    const { loadMemesSlice } = getState()
+    const fetchStatus = loadMemesSlice.requests[userId]
+    if (fetchStatus === 'fulfilled' || fetchStatus === 'loading') {
+      // Already fetched or in progress, don't need to re-fetch
+      return false
+    }
+  }
+}
 );
 
 export const loadMemesSlice = createSlice({

@@ -3,7 +3,7 @@ import { postMemeRequest } from "../features/editMeme/memeFormSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const MemeForm = ({id,textAmount}) => {
+const MemeForm = ({id}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [queryParams, setQueryParams] = useState({template_id: id,
