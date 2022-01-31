@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
 
-export const postMemeRequest = createAsyncThunk("formSlice/postForm", async (arg, thunkAPI) => {
+export const postMemeRequest = createAsyncThunk("formSlice/postForm", async (arg) => {
+  //arg is the arguement passed from the dispatch
   try {
     const response = await fetch(`https://api.imgflip.com/caption_image${arg}`)
     const json = await response.json()  
