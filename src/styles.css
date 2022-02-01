@@ -128,13 +128,14 @@
 /* form starts here */
 .meme-component-main {
   padding:2rem;
+  width:50%;
 }
 .meme-div {
   border-radius:10px;
   border:2px solid orange;
   padding:1rem;
   margin:1rem auto;
-  width:40%;
+  width:70%;
   margin:1rem auto;
   display:flex;
   justify-content: center;
@@ -143,7 +144,9 @@
   background-color: lightblue;
 }
 .meme-div img {
+  max-width:90%;
   width:90%;
+  height:250px;
   border-radius:10px;
   border:2px solid orange;
 }
@@ -151,6 +154,7 @@
 .form-main {
   display:flex;
   flex-direction: column;
+  max-width:90%;
   width:90%;
   margin:1rem auto;
   border:2px solid orange;
