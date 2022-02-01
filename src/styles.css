@@ -14,14 +14,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:1rem;
+  padding:auto auto;
   max-width:100vw;
-  background-color: rgb(29, 28, 28); 
+  background:black;
 }
 /* header starts here */
 .header-main {
   background-color: lightblue;
-  position: sticky;
+  position: fixed;
   z-index:100;
   width:100vw;
   display:flex;
@@ -47,8 +47,7 @@
   font-family: sans-serif;
   display: grid;
   grid-template-columns:repeat(auto-fill, 240px);
-  margin:0.5rem auto;
-  max-height:550px;
+  margin:5rem auto 3rem;
   overflow: scroll;
   max-width:90%;
   padding:1em 1rem;
@@ -132,7 +131,7 @@
   padding:0.5rem;
   background-color: lightblue;
   margin:1rem auto;
-  max-width:60%;
+  width:250px;
 }
 .meme-div img{
   max-height:300px;
@@ -207,6 +206,8 @@
 .fetchedmeme-main a {
   display:flex;
   justify-content: center;
+  width:90%;
+  border:2px solid black;
 }
 
 .fetchedmeme-main img {
@@ -256,14 +257,13 @@
 }
 @media (max-width:455px) {
   .routes-section {
-    padding:0;  
+    padding:10px;  
   }
   .all-memes-main-content {
-    max-width:80%;
+    max-width:90%;
     grid-template-columns:repeat(3, 1fr);
     padding:0.3rem;
     gap:0.4rem;
-    margin:0.5rem auto;
     height:75vh;
   }
   .each-meme {
