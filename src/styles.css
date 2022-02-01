@@ -234,8 +234,7 @@
   animation: flash 0.5s linear 0.5s infinite alternate;
   cursor:pointer;
 }
-
-
+/* I hate css */
 @media (max-width:850px) {
   .routes-section {
     padding:1rem;

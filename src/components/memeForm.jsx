@@ -23,9 +23,9 @@ const MemeForm = ({id}) => {
     }
     return (
             <form className="form-main" onSubmit={handleSubmit}>
-                <textarea required name="text0" type="text" placeholder="type something..." onChange={handleChange}>
+                <textarea spellcheck="false" required name="text0" type="text" placeholder="type something..." onChange={handleChange}>
                 </textarea>
-                <textarea name="text1" type="text" placeholder="type something..." onChange={handleChange}>
+                <textarea spellcheck="false" name="text1" type="text" placeholder="type something..." onChange={handleChange}>
                 </textarea>
                 <button type="submit">MakeMeme</button>
             </form>
