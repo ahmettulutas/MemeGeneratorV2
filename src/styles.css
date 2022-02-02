@@ -14,7 +14,7 @@
 .routes-section {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding:1rem 1rem;
   max-width:100vw;
   background:black;
@@ -130,13 +130,18 @@
   padding:2rem;
   width:50%;
 }
+.meme-component-main {
+  display:flex;
+  width:100%;
+  max-width:350px;
+  padding:1rem;
+}
 .meme-div {
   border-radius:10px;
+  width:100%;
   border:2px solid orange;
-  padding:1rem;
-  margin:1rem auto;
-  width:70%;
-  margin:1rem auto;
+  padding:0.3rem;
+  margin:0.5rem auto;
   display:flex;
   justify-content: center;
   flex-direction:column;
@@ -149,17 +154,17 @@
   height:250px;
   border-radius:10px;
   border:2px solid orange;
+  margin-top:0.5rem;
 }
 
 .form-main {
   display:flex;
   flex-direction: column;
-  max-width:90%;
   width:90%;
   margin:1rem auto;
   border:2px solid orange;
   border-radius: 10px;
-  padding:1rem;
+  padding:0.2rem;
 }
 .form-main textarea {
   resize:none;
@@ -266,9 +271,7 @@
   .meme-info img {
     height:70px;
   }
-  .meme-div {
-    width:80%;
-  }
+
 }
 @media (max-width:455px) {
   .routes-section {
