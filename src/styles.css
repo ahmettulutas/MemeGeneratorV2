@@ -276,7 +276,7 @@
   }
   .all-memes-main-content {
     max-width:90%;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(auto-fill, 70px);
     padding:0.3rem;
     gap:0.4rem;
     height:75vh;
