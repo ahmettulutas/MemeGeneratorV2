@@ -14,16 +14,7 @@ export const loadAllMemes = createAsyncThunk(
       console.log(error)
     }
   },
-  {
-    condition: (userId, { getState, extra }) => {
-    const { loadMemesSlice } = getState()
-    const fetchStatus = loadMemesSlice.requests[userId]
-    if (fetchStatus === 'fulfilled' || fetchStatus === 'loading') {
-      // Already fetched or in progress, don't need to re-fetch
-      return false
-    }
-  }
-}
+  
 );
 ```
 # Türkçe 
