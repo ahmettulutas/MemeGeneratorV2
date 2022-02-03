@@ -19,11 +19,9 @@ const DisplayMemes = () => {
     const rejected = useSelector(selectRejected)
 
     useEffect(() => {
-      // I'm getting good at this shit <3.
-      if(allMemes.length <1) {
+      // I'm getting good at this shit <3
         dispatch(loadAllMemes())
-      }
-      console.log(persistor.getState());
+        
     }, [dispatch]);
 
     if (loading) {
