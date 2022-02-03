@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { REHYDRATE } from "redux-persist/lib/constants";
-
 export const postMemeRequest = createAsyncThunk("formSlice/postForm", async (arg) => {
   //arg is the arguement passed from the dispatch
   try {
