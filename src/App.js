@@ -9,18 +9,16 @@ import Footer from "./components/footer";
 export default function App() {
 
   return (
-     
           <Router>
-          <Header />  
-          <div className="routes-section">
-          <Routes >
-            <Route  path="/" exact element={<AllMemes/>}/>
-            <Route path="/:id" element={<MemeComponent />}></Route>
-            <Route path="/:id/:fetchedmeme" element={<FetchedMeme />}></Route>
-          </Routes>
-          </div>  
-          <Footer />
+            <Header />  
+                <div className="routes-section">
+                <Routes >
+                  <Route  path="/" exact element={<AllMemes/>}/>
+                  <Route path="/:id" element={<MemeComponent />}></Route>
+                  <Route path="/:id/:fetchedmeme" element={<FetchedMeme />}></Route>
+                </Routes>
+              </div>  
+            <Footer />
           </Router>
-
   );
 }

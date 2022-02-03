@@ -9,7 +9,7 @@ const FetchedMeme = () => {
         if (loading) {
             return (
                 <main className="fetchedmeme-main">
-                    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"  speed="1"  style={{width: "300px", height: "300px;"}}  loop autoplay></lottie-player>;
+                    <h1>Loading...</h1>
                 </main>
             )}
             
