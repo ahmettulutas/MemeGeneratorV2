@@ -2,7 +2,7 @@ import {useState} from "react";
 import { postMemeRequest } from "../features/editMeme/memeFormSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import { persistor } from "../store";
 const MemeForm = ({id}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -16,10 +16,10 @@ const MemeForm = ({id}) => {
         
     }
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        dispatch(postMemeRequest(makeParamsQuery(queryParams)))
-        navigate(`/memes/${id}/${queryParams.template_id +"fetch"}`)
-        
+        await e.preventDefault()
+        await dispatch(postMemeRequest(makeParamsQuery(queryParams)))
+        await navigate(`/${id}/fetch`)
+        await persistor.persist()
     }
     return (
             <form className="form-main" onSubmit={handleSubmit}>

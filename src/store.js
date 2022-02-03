@@ -17,7 +17,8 @@
 const persistConfig = { // configuration object for redux-persist
     key: 'root',
     storage, // define which storage to use
-    whitelist : ['loadMemesSlice'],
+    whitelist: ["loadMemesSlice"],
+    blacklist:["router"]
   }  
 const rootReducer = combineReducers({
   loadMemesSlice: loadMemesSlice,
@@ -27,11 +28,11 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer) 
 
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: persistedReducer, 
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, PAUSE, PURGE, REGISTER, REHYDRATE, PERSIST],
+        ignoredActions: [FLUSH, PAUSE, PURGE, REHYDRATE, REGISTER, PERSIST],
       },
     }), 
 })

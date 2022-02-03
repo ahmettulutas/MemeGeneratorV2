@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { PURGE , REHYDRATE} from "redux-persist";
-
+import { REHYDRATE } from "redux-persist/lib/constants";
 
 export const postMemeRequest = createAsyncThunk("formSlice/postForm", async (arg) => {
   //arg is the arguement passed from the dispatch
@@ -21,7 +20,8 @@ const fetchedMemeSlice = createSlice({
     isLoading:false,
     isFailed:false,
     isFulfilled:false,
-    fetchedmeme:{}
+    fetchedmeme:{},
+    rehydrate:false
   },
   extraReducers:{
     [postMemeRequest.pending]:(state) => {
@@ -36,9 +36,8 @@ const fetchedMemeSlice = createSlice({
       state.isFailed = true;
     },
     [REHYDRATE]: (state,action) => {
-
-      return state
-  }
+        console.log("rehydrated");
+    }
   }
 
 
@@ -48,5 +47,6 @@ export default fetchedMemeSlice.reducer;
 //selectors
 export const selectMeme = state => state.fetchedMemeSlice.fetchedmeme;
 export const selectIsLoading = state => state.fetchedMemeSlice.isLoading;
+export const selectRehydrate = state => state.fetchedMemeSlice.rehydrate;
 export const selectIsFulfilled = state => state.fetchedMemeSlice.isFulfilled;
 

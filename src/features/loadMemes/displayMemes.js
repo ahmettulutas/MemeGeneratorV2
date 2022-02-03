@@ -2,7 +2,6 @@ import {  useEffect } from "react";
 import Meme from "../../components/meme";
 import Failed from "../../components/failed";
 import { useSelector, useDispatch } from "react-redux";
-
 import {
   selectFulfilled,
   selectAllMemes,
@@ -21,8 +20,10 @@ const DisplayMemes = () => {
 
     useEffect(() => {
       // I'm getting good at this shit <3.
+      if(allMemes.length <1) {
         dispatch(loadAllMemes())
-      }, [dispatch]);
+      }
+    }, [dispatch]);
 
     if (loading) {
       return (
@@ -47,7 +48,7 @@ const DisplayMemes = () => {
 export default DisplayMemes;
 
 const createMemeComponent = (meme) => (
-  <Link style={{ textDecoration: 'none' }} to={`/memes/${meme.id}`}>
+  <Link style={{ textDecoration: 'none' }} to={`/${meme.id}`}>
     <Meme
       key={meme.id}
       id={meme.id}
