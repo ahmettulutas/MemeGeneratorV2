@@ -1,7 +1,7 @@
 import "./styles.css";
 import Header from "./components/header";
 import MemeComponent from "./features/editMeme/memeComponent";
-import { BrowserRouter as Router, Navigate, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AllMemes from "./features/loadMemes/displayMemes";
 import FetchedMeme from "./components/fetchedMeme";
 import Footer from "./components/footer";

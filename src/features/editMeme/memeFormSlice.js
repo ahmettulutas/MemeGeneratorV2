@@ -24,7 +24,7 @@ const fetchedMemeSlice = createSlice({
     fetchedmeme:{}
   },
   extraReducers:{
-    [postMemeRequest.pending]:(state,action) => {
+    [postMemeRequest.pending]:(state) => {
       state.isLoading = true;
     },
     [postMemeRequest.fulfilled]:(state,action) => {
@@ -32,7 +32,7 @@ const fetchedMemeSlice = createSlice({
       state.isFulfilled = true;
       state.isLoading = false;
     },
-    [postMemeRequest.rejected]:(state,action) => {
+    [postMemeRequest.rejected]:(state) => {
       state.isFailed = true;
     }
   }
