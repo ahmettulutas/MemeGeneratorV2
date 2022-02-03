@@ -1,11 +1,14 @@
 import { selectMeme, selectIsLoading, selectIsFulfilled } from "../features/editMeme/memeFormSlice";
 import {useSelector} from "react-redux";
 import Failed from "./failed";
-
+import { useEffect } from "react";
 const FetchedMeme = () => {
+
         const newMeme = useSelector(selectMeme);
         const loading = useSelector(selectIsLoading)
         const fulfilled = useSelector(selectIsFulfilled)
+        useEffect(() => {
+        }, [loading])
         if (loading) {
             return (
                 <main className="fetchedmeme-main">

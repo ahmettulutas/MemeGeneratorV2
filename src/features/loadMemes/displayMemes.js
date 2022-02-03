@@ -10,7 +10,7 @@ import {
   selectRejected
 } from "./loadMemesSlice";
 import { Link } from "react-router-dom";
-import { persistor } from "../../store";
+
 const DisplayMemes = () => {
     const dispatch = useDispatch();
     const allMemes = useSelector(selectAllMemes);
@@ -21,7 +21,7 @@ const DisplayMemes = () => {
     useEffect(() => {
       // I'm getting good at this shit <3
         dispatch(loadAllMemes())
-
+        
     }, [dispatch]);
 
     if (loading) {
