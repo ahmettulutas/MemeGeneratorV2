@@ -17,8 +17,7 @@
 const persistConfig = { // configuration object for redux-persist
     key: 'root',
     storage, // define which storage to use
-    whitelist: ["loadMemesSlice"],
-    blacklist:["router"]
+    whitelist : ['fetchedMemeSlice','loadMemesSlice'],
   }  
 const rootReducer = combineReducers({
   loadMemesSlice: loadMemesSlice,
