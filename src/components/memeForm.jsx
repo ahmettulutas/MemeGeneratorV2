@@ -19,7 +19,7 @@ const MemeForm = ({id}) => {
         await e.preventDefault()
         await dispatch(postMemeRequest(makeParamsQuery(queryParams)))
         await navigate(`/${id}/fetch`)
-        await persistor.persist()
+        await persistor.persist() // I have tried to force store to persist here.
     }
     return (
             <form className="form-main" onSubmit={handleSubmit}>
