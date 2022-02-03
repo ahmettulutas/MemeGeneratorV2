@@ -3,7 +3,7 @@ import { PURGE } from "redux-persist";
 // async action to fetch all meme templates
 export const loadAllMemes = createAsyncThunk(
   "allMemes/loadAllMemes",
-  async (_, {getState}) => {
+  async () => {
     try {
       const response = await fetch("https://api.imgflip.com/get_memes");
       const json = await response.json();

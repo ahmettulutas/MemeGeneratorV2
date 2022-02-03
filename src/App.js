@@ -12,10 +12,9 @@ export default function App() {
           <Header />  
           <div className="routes-section">
           <Routes>
-            <Route path="/" element={<AllMemes />}></Route>
+            <Route path="/" exact element={<AllMemes/>}/>
             <Route path="/memes/:id" element={<MemeComponent />}></Route>
             <Route path="/memes/:id/:fetchedmeme" element={<FetchedMeme />}></Route>
-            <Route path="*" element={<Navigate to="/" />}></Route>
           </Routes>
           </div>  
           <Footer />
