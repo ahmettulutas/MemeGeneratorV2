@@ -9,14 +9,12 @@
 .main-app-layout {
   display:grid;
   grid-template-rows:auto 1fr auto;
-  height:100vh;
+  min-height:100vh;
 }
 .routes-section {
-  height:90vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding:1rem 1rem;
+  align-items: center;
   width:100vw;
   background:black;
 }
@@ -25,7 +23,7 @@
   background-color: lightblue;
   position: sticky;
   z-index:100;
-  width:100vw;
+  width:100%;
   display:flex;
   justify-content: space-around;
   padding:1rem 1rem;

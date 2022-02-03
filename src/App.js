@@ -10,6 +10,7 @@ export default function App() {
 
   return (
           <Router>
+            <main className="main-app-layout">
             <Header />  
                 <div className="routes-section">
                 <Routes >
@@ -19,6 +20,7 @@ export default function App() {
                 </Routes>
               </div>  
             <Footer />
+            </main>
           </Router>
   );
 }
