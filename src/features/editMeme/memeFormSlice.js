@@ -20,7 +20,6 @@ const fetchedMemeSlice = createSlice({
     isFailed:false,
     isFulfilled:false,
     fetchedmeme:{},
-    rehydrate:false
   },
   extraReducers:{
     [postMemeRequest.pending]:(state) => {
@@ -46,6 +45,5 @@ export default fetchedMemeSlice.reducer;
 //selectors
 export const selectMeme = state => state.fetchedMemeSlice.fetchedmeme;
 export const selectIsLoading = state => state.fetchedMemeSlice.isLoading;
-export const selectRehydrate = state => state.fetchedMemeSlice.rehydrate;
 export const selectIsFulfilled = state => state.fetchedMemeSlice.isFulfilled;
 
