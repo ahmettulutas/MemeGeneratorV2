@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { PURGE } from "redux-persist";
+import { PURGE , REHYDRATE} from "redux-persist";
 // async action to fetch all meme templates
 export const loadAllMemes = createAsyncThunk(
   "allMemes/loadAllMemes",
@@ -35,10 +35,11 @@ export const loadMemesSlice = createSlice({
     [loadAllMemes.rejected]: (state, action) => {
       state.hasError = true;
     },
-    [PURGE]: (state) => {
-      state = {};
-      } 
+    [REHYDRATE]: (state,action) => {
+
+      console.log("REHYDRATE");
   }
+}
 });
 export default loadMemesSlice.reducer;
 
