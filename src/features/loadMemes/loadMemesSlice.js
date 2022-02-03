@@ -45,6 +45,6 @@ export default loadMemesSlice.reducer;
 
 // selectors
 export const selectAllMemes = (state) => state.loadMemesSlice.allMemes.memes;
-export const selectIsPending = (state) => state.loadMemesSlice.isLoading;
+export const selectIsLoading = (state) => state.loadMemesSlice.isLoading;
 export const selectFulfilled = (state) => state.loadMemesSlice.fulfilled;
 export const selectRejected = (state)  => state.loadMemesSlice.hasError;

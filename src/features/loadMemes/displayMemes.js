@@ -6,7 +6,7 @@ import {
   selectFulfilled,
   selectAllMemes,
   loadAllMemes,
-  selectIsPending,
+  selectIsLoading,
   selectRejected
 } from "./loadMemesSlice";
 import { Link } from "react-router-dom";
@@ -14,14 +14,14 @@ import { persistor } from "../../store";
 const DisplayMemes = () => {
     const dispatch = useDispatch();
     const allMemes = useSelector(selectAllMemes);
-    const loading = useSelector(selectIsPending);
+    const loading = useSelector(selectIsLoading);
     const fulfilled = useSelector(selectFulfilled);
     const rejected = useSelector(selectRejected)
 
     useEffect(() => {
       // I'm getting good at this shit <3
         dispatch(loadAllMemes())
-        
+
     }, [dispatch]);
 
     if (loading) {
