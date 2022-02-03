@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { PURGE , REHYDRATE} from "redux-persist";
 
 
 export const postMemeRequest = createAsyncThunk("formSlice/postForm", async (arg) => {
@@ -34,7 +34,11 @@ const fetchedMemeSlice = createSlice({
     },
     [postMemeRequest.rejected]:(state) => {
       state.isFailed = true;
-    }
+    },
+    [REHYDRATE]: (state,action) => {
+
+      return state
+  }
   }
 
 
