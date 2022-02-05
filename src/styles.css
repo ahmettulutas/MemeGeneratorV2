@@ -189,10 +189,10 @@
 .form-main button:focus {
   color:white;
   border:1px solid black;
-
 }
 
 /* form ends here */
+
 /* fetched meme starts here */
 .fetchedmeme-main {
   max-width:380px;
@@ -206,7 +206,6 @@
   justify-content: space-between;
   background-color: lightblue;
   margin:1rem auto;
-  
 }
 @keyframes flash {
   from {color:black}
@@ -215,7 +214,7 @@
 .fetchedmeme-main p {
   background-color: lightblue;
   font-weight: bold;
-  padding:5px;
+  padding-bottom:15px;
   text-align:center;
   animation: flash 0.4s linear 0.5s infinite alternate;
   border-radius:10px;

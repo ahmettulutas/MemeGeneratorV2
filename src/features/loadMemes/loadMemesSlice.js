@@ -36,7 +36,6 @@ export const loadMemesSlice = createSlice({
       state.hasError = true;
     },
     [REHYDRATE]: (state,action) => {
-
       console.log("REHYDRATE");
   }
 }
@@ -44,7 +43,7 @@ export const loadMemesSlice = createSlice({
 export default loadMemesSlice.reducer;
 
 // selectors
-export const selectAllMemes = (state) => state.loadMemesSlice.allMemes.memes;
-export const selectIsLoading = (state) => state.loadMemesSlice.isLoading;
-export const selectFulfilled = (state) => state.loadMemesSlice.fulfilled;
-export const selectRejected = (state)  => state.loadMemesSlice.hasError;
+export const selectAllMemes = state => state.loadMemesSlice.allMemes.memes;
+export const selectIsLoading = state => state.loadMemesSlice.isLoading;
+export const selectFulfilled = state => state.loadMemesSlice.fulfilled;
+export const selectRejected = state  => state.loadMemesSlice.hasError;

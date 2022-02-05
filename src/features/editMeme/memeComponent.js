@@ -10,10 +10,11 @@ const MemeComponent = () => {
   const { id } = useParams();
   useEffect(() => {
     //checks if allmemes are loaded 
-      if (allMemes) {
-        setSelectedMeme(allMemes.find(item => item.id === id));
-      }
-  },[id, allMemes]);
+        if (allMemes) {
+          setSelectedMeme(allMemes.find(item => item.id === id))
+        }
+      },[id, allMemes]);
+
   return (
     <main className="meme-component-main">
       {selectedMeme && (
@@ -23,8 +24,7 @@ const MemeComponent = () => {
         </div>
       )}
     </main>
-  );
-};
+  )};
 export default MemeComponent;
 
 

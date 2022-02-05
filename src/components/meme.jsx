@@ -1,6 +1,6 @@
 import SelectButton from "./selectbutton.jsx";
 
-const Meme = ({ id, url, alt, name }) => {
+const Meme = ({ id, url, name }) => {
   return (
     <main className="each-meme">
       <div className="meme-info">
