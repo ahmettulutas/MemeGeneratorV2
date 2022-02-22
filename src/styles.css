@@ -48,19 +48,15 @@
   display: grid;
   grid-template-columns:repeat(auto-fill, 240px);
   margin:2rem auto;
-  overflow: scroll;
+  overflow-y: scroll;
   max-width:90%;
-  padding:1em 1rem;
+  padding:1rem 1rem;
   grid-gap:0.6rem;
+  scrollbar-color: red yellow;
   color:white;
   border:2px solid lightblue;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
   height:80vh;
-}
-.all-memes-main-content::-webkit-scrollbar {
-  display: none;
-}
+} 
 
 .each-meme {
   border: 3px solid lightblue;
@@ -107,7 +103,6 @@
 .meme-info p {
   color:white;
   text-decoration: none;
-
 }
 .svg-div {
   width: 100%;
