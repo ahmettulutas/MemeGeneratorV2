@@ -8,7 +8,7 @@ const MemeForm = ({id}) => {
     const dispatch = useDispatch()
     const [queryParams, setQueryParams] = useState({template_id: id,
                                         username:process.env.REACT_APP_IMGFLIP_USERNAME,
-                                        password:process.env.REACT_APP_IMGFLIP_PASSWORD,})
+                                        password:process.env.REACT_APP_IMGFLIP_PASSWORD})
     const handleChange= (e) => {
         const {name, value} = e.target
         setQueryParams(prev => ({...prev, [name]:value.toUpperCase()}))

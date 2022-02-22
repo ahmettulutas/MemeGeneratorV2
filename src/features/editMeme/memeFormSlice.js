@@ -33,7 +33,7 @@ const fetchedMemeSlice = createSlice({
     [postMemeRequest.rejected]:(state) => {
       state.isFailed = true;
     },
-    [REHYDRATE]: (state,action) => {
+    [REHYDRATE]: () => {
         console.log("rehydrated");
     }
   }

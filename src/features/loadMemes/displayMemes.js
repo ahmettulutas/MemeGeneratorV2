@@ -1,4 +1,5 @@
-import {  useEffect } from "react";
+import {useEffect} from "react";
+import {Link} from "react-router-dom";
 import Meme from "../../components/meme";
 import Failed from "../../components/failed";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,7 +10,7 @@ import {
   selectIsLoading,
   selectRejected
 } from "./loadMemesSlice";
-import { Link } from "react-router-dom";
+
 
 const DisplayMemes = () => {
     const dispatch = useDispatch();
@@ -20,8 +21,7 @@ const DisplayMemes = () => {
 
     useEffect(() => {
       // I'm getting good at this shit <3
-        dispatch(loadAllMemes())
-        
+       dispatch(loadAllMemes())
     }, [dispatch]);
 
     if (loading) {

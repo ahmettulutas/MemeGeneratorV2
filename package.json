@@ -1,6 +1,6 @@
 {
   "homepage": "https://memegeneratorv2.netlify.app/",
-  "name": "memegeneratoradvanced",
+  "name": "memegeneratorv2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

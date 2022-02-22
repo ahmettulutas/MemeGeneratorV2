@@ -16,8 +16,9 @@ const FetchedMeme = () => {
     if(fulfilled && newMeme) {
         return (
             <main className="fetchedmeme-main">
-                <p>Click on the Meme to download it</p>
-                <a target="_blank" rel="noreferrer" href={newMeme.data.url} download={newMeme.data.url}><img download={newMeme.data.url} alt="fetchedmeme" src={newMeme.data.url}></img></a>
+                <p>Click on the Meme.</p>
+                <p>Then, right click to save it.</p>
+                <a target="_blank" rel="noreferrer" href={newMeme.data.url} download={newMeme.data.url}><img target="_blank" download={newMeme.data.url} alt="fetchedmeme" src={newMeme.data.url}></img></a>
             </main>
         )
     }

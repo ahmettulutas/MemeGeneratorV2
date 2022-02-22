@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import MemeForm from "../../components/memeForm.jsx";
-import { useSelector } from "react-redux";
-import { selectAllMemes } from "../loadMemes/loadMemesSlice";
-import { useEffect, useState } from "react";
+import {useSelector} from "react-redux";
+import {selectAllMemes} from "../loadMemes/loadMemesSlice";
+import {useEffect, useState} from "react";
 
 const MemeComponent = () => {
   const [selectedMeme, setSelectedMeme] = useState(null);

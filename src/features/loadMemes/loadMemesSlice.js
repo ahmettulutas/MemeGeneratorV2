@@ -1,5 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { REHYDRATE} from "redux-persist";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 // async action to fetch all meme templates
 export const loadAllMemes = createAsyncThunk(
   "allMemes/loadAllMemes",
@@ -24,7 +23,7 @@ export const loadMemesSlice = createSlice({
     allMemes: {}
   },
   extraReducers:  {
-    [loadAllMemes.pending]: (state, action) => {
+    [loadAllMemes.pending]: (state) => {
       state.pending = true;
     },
     [loadAllMemes.fulfilled]: (state, action) => {
@@ -32,12 +31,9 @@ export const loadMemesSlice = createSlice({
       state.isLoading = false;
       state.allMemes = action.payload;
     },
-    [loadAllMemes.rejected]: (state, action) => {
+    [loadAllMemes.rejected]: (state) => {
       state.hasError = true;
     },
-    [REHYDRATE]: (state,action) => {
-      console.log("REHYDRATE");
-  }
 }
 });
 export default loadMemesSlice.reducer;
